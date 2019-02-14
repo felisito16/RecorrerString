@@ -1,0 +1,111 @@
+package rs;
+
+import java.util.Arrays;
+
+public class RecorrerString {
+
+	public static void main(String[] args) {
+
+		System.out.println(CambiarVocalesi("Sevilla hace calor"));
+		System.out.println("-----------------------------------");
+		System.out.println(OrdenarLetras("l z k a x"));
+		System.out.println("-----------------------------------");
+		restoDe20("21 22 357 5789");
+		System.out.println("-----------------------------------");
+		System.out.println(GradosAgujas(12,5));
+		/*
+		String cadena = "Sevilla hace calor";
+		char[] cadenaCharArray= cadena.toCharArray();
+		System.out.println("Antes : " + cadena);
+		for(int i = 0 ; i < cadena.length() ; i++) {
+			if(Character.toString(cadenaCharArray[i]).matches("[aeiou]")) {
+			 // cadenaCharArray[i] = Character.toUpperCase(cadenaCharArray[i]);
+				cadenaCharArray[i] = 'i';
+			}
+		}
+		cadena = String.valueOf(cadenaCharArray);
+		System.out.println("Despues : " + cadena);
+
+		System.out.println("---------------------------------------");
+		 */
+
+		/*
+		String cadena2 = "l v k f e";
+		char[] cadenaCharArray2 = cadena2.toCharArray();
+		System.out.println("Antes : " + cadena2);
+		Arrays.sort(cadenaCharArray2);
+		cadena2 = String.valueOf(cadenaCharArray2).replaceAll(""," ").trim();
+		System.out.println("Despues : " + cadena2);
+
+		System.out.println("---------------------------------------");
+
+		String cadena3 = "21 22 357 5789";
+		String[] numeroArray = cadena3.split(" ");
+		int resto;
+		for(int i = 0 ; i < numeroArray.length ; i++) {
+			resto = Integer.parseInt(numeroArray[i]) % 20;
+			System.out.println("El resto de " + numeroArray[i] + " entre 20 es " + resto);
+		}
+
+		System.out.println("---------------------------------------");
+		*/
+		
+		/*
+		int aguja1 = 3;
+		int aguja2 = 3;
+		double gradoAguja1 = aguja1 * (360/12) ;
+		double gradoAguja2 = aguja2 * (360/12) ;
+		double resultado = 360 - (gradoAguja1 - gradoAguja2);
+		if(resultado > 360 */ /*Si quieres que te diga que es de 360º solo añadimos un "=" despues del ">" */ /* ) {
+			resultado -= 360;
+		}
+		System.out.println("Los grados entre las agujas es de : " + resultado);
+		*/
+		
+	}
+
+	public static String CambiarVocalesi(String cadena) {
+
+		char[] cadenaCharArray= cadena.toCharArray();
+		System.out.println("Antes : " + cadena);
+		for(int i = 0 ; i < cadena.length() ; i++) {
+			if(Character.toString(cadenaCharArray[i]).matches("[aeiou]")) {
+				// cadenaCharArray[i] = Character.toUpperCase(cadenaCharArray[i]);
+				cadenaCharArray[i] = 'i';
+			}
+		}
+		cadena = String.valueOf(cadenaCharArray);
+		return "Despues : " + cadena;
+	}
+
+	public static String OrdenarLetras(String cadena) {
+
+		char[] cadenaCharArray = cadena.toCharArray();
+		System.out.println("Antes : " + cadena);
+		Arrays.sort(cadenaCharArray);
+		cadena = String.valueOf(cadenaCharArray).replaceAll(""," ").trim();
+		return "Despues : " + cadena;
+	}
+	
+	public static void restoDe20(String cadena) {
+
+		String[] numeroArray = cadena.split(" ");
+		int resto;
+		for(int i = 0 ; i < numeroArray.length ; i++) {
+			resto = Integer.parseInt(numeroArray[i]) % 20;
+			System.out.println("El resto de " + numeroArray[i] + " entre 20 es " + resto);
+		}
+	
+	}
+	
+	public static String GradosAgujas(int aguja1, int aguja2) {
+
+		double gradoAguja1 = aguja1 * (360/12) ;
+		double gradoAguja2 = aguja2 * (360/12) ;
+		double resultado = 360 - (gradoAguja1 - gradoAguja2);
+		if(resultado > 360 /* Si quieres que te diga que es de 360º solo añadimos un "=" despues del ">" */ ) {
+			resultado -= 360;
+		}
+		return "Los grados entre las agujas es de : " + resultado;
+	}
+}
